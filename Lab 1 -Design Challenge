@@ -1,0 +1,25 @@
+Lab 1
+2/5/2020
+Shea Clark, Justin
+
+Objectives: The objective of this lab was to be able to divide up a network in the most efficient way to 
+accomodate 4 different companies varying in size.
+
+Notes and Observations: The first thing we did to design this network was figure out how many bits we would need to borrow for each
+of the 4 companies. We started with the large company(5,000 nodes). We calculated that we should give them quite a bit extra since they
+would be likely to have the most rapid growth out of all of the companies. Then we just moved from largest to smallest.
+Large company(5,000 nodes): 13 bits
+Medium-Large company(1,500 nodes): 11 bits
+Medium company(200 nodes): 9 bits
+Small company(50 nodes): 7 bits
+
+It turns out that we ended up wasting more than needed with the small company.
+Next we came up with a network diagram. With the diagram we had the happy accident of reserving the address blocks for the companies in
+such a way that it would easily allow us to expand by adding the address block next to it.
+
+Next we worked on the summary sheets. All I really contributed to this part was the /# of the subnets. Justin did the rest. I could see
+how he was coming up with the addresses, but it still confuses me.
+
+Conclusion and Reflection: This was a challenging lab for me since networking is still pretty muddy for me to understand.
+Thankfully Justin understood the process. Sometimes he would get lost in the process of dividing up the network, but I was able to point out
+small details that he overlooked. So overall we didn't make a bad team.
