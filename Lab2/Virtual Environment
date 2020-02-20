@@ -4,9 +4,59 @@ Shea Clark, Alexandra
 
 Objectives: The objective of this lab was to create a virtual machine on Hyper4.
 
+Equipment List: Dell rack servers
+ DVD Installation of ProxMox VE
+ Browser to remotely connect to ProxMox virtual environment
+ ISO file of Window Server 2016 to install VM
+ Remote Desktop to access WinServer 2016
+
+Questions: 
+1. What settings did you change on Windows Server after it was installed?
+After the install we went to the Server Manager and enabled remote access.
+
+2. List your Computer name, IPv4 address, Subnet mask, Gateway address, and DNS addresses.
+Hyper4
+IP 10.136.212.45
+Subnet 255.255.252.0
+Gateway 10.136.212.1
+DNS 10.133.253.130
+
+3. What is the Ethernet address (physical address) for your network interface?
+10.136.212.54
+
+4. Based on the IP information what is the network id of the lab’s network?
+10.136.212
+
+5. Based on the IP information what is the host id of your computer?
+54
+
+6. What is the range of the host IP addresses on this subnet?
+10.136.212.1                              10.136.151.254
+10011010.10101010.100101 00.00000001      10011010.10101010.100101 11.11111110
+
+7. What is the purpose of the Default Gateway?
+The purpose of the Default Gateway is to serve as an access point to communicate with the internet or computers on another network.
+
+8. What symptoms would you expect if you didn’t have a valid Default Gateway address entered
+on your computer’s IP configuration?
+Probably wouldn't be able to communicate outside of the network.
+
 Notes and Observations: 
 
+With this lab, Alexandra and I ran into a few problems. The first one being that when we booted up the bios, it said
+that it only recognized one of the two harddrives. Which you ended up going ahead and taking out of the harddrives.
+Then when we tried to install Proxmox, it kept running into error of being unable to partition harddisk. Whatever that means.
+To fix this we had to clear the foreign config and initialize virtual disk.
+Then rebooted and install was finally able to complete.
 
+Once we logged into Proxmox and got access to hyper4, we used WinSCP to transfer a file to hyper4 to install Windows OS.
+We then created our virtual machine and called it winServer4.
+We had to set the Cores to 4 and Memory to 8192 Mb.
+
+We went to Console and installed Windows. After install we logged into winServer4 and changed our IP to 10.136.212.54
+Finally, we went to ServerManager and enabled remote access.
 
 Conclusion and Reflection: 
-
+When running into errors, there is a lot of rebooting and waiting that takes place. It was also nice have 3 different groups 
+working on the same thing/running into the same problems. We were able to consult with one another and problem solve our errors
+collectively. It was a good experience in learning how to set up a virtual machine that will provide a good backup solution. 
