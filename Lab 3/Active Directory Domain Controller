@@ -1,0 +1,30 @@
+Lab 3
+Shea Clark, Alexandra
+2/24/2020
+
+Objectives: Create a new domain and add organizational units
+and users.
+
+Equipment List: Lab Computer, Hyper4, Windows 10 os.
+
+Questions:
+
+Notes and Observations: For this lab the first thing we did
+go to "Server Manager" and "Add Role -> Active Directory
+Domain Services -> Install
+
+This is when we added a new "forest" for our domain although we
+actually only have one "tree" for it. 
+    Root Domain name: domain4.local
+
+Then we needed to create our first "Organizational Unit".
+  Server Manager -> Tools -> Active Directory Users and Computers
+  -> Create Organizational Unit -> "First OU" -> create users
+ 
+My new user name I created was "sheaclark@domain4.local"
+
+Next we created a new Virtual Machine called "Win4Client" and
+used WinSCP to transfer the Windows 10 os to it.
+
+
+Conclusion and Reflection:
