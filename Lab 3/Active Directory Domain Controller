@@ -10,17 +10,32 @@ Equipment List: Lab Computer, Hyper4, Windows 10 os.
 Questions:
 1. Why was it important we changed the Preferred DNS Server on 
 the Client?
+It makes it faster and safer to browse the web. It also allows
+us to keep record of the browsing on the Client server.
 
 2. What extra step did you have to do to allow you to log in to 
 the client with a domain user? Why do you suppose the Microsoft 
 added that extra requirement?
 
+The extra step we had to take was creating a group and our own
+users for that group. Then enabling remote access for that group.
+I'm guessing the reason why for the extra step is for security
+reasons.
+
 3. Why Active Directory? What advantages does it offer over 
 using just regular servers on your network?
 
+Active Directory allows for a single logon to access the server
+globally. It also centralizes everything and provides a way
+to apply security administration.
+
 4. List several reasons why companies use virtual servers.
 
-<b>Notes and Observations:</b> For this lab the first thing we did
+Using a virtual sever reduces hardware costs which also improves
+energy costs. It's also much faster to install and deploy a VM
+than to do another physical server.
+
+Notes and Observations: For this lab the first thing we did
 go to "Server Manager" and "Add Role -> Active Directory
 Domain Services -> Install
 
