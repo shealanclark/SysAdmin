@@ -26,5 +26,35 @@ My new user name I created was "sheaclark@domain4.local"
 Next we created a new Virtual Machine called "Win4Client" and
 used WinSCP to transfer the Windows 10 os to it.
 
+When trying to install Windows we ran into the issue of the 
+computer not be able to find a drive to install on. Found out
+that the reason it failed was because when setting up that VM, 
+it was kept on the default "Linux" setting instead of changing 
+it to Windows.
+Once we created a new VM called "Win4ClientA" and used the 
+appropriate settings; there was no issue of installing Windows
+on the drive.
+
+After install we enabled remote access for Win4ClientA.
+Then we set the DNS to 10.136.212.54
+-Changed the computers name to Win4ClientA.
+-Changed the domain name to Domain4.
+Then reboot to changes to take effect.
+
+ip:10.136.215.181
+subnet:255.255.252.0
+gateway:10.136.212.1
+
+We were unable to activate Windows until we connected to
+organizations network.
+Things we did to finish up:
+-Create a new Organizational Unit called "Second OU"
+-Create a new user "sheaclient@domain4.local"
+-Create a new group under second ou and add Shea Client & Alex
+Client to be able to remote access.
+-Remote desktop to Client-Success! Client logged in!
 
 Conclusion and Reflection:
+This lab was fairly similar to Lab 2 in that we created another
+Virtual Machine and installed Windows 10 on it. As well as
+created users to log onto it. 
