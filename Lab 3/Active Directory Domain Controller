@@ -8,8 +8,19 @@ and users.
 Equipment List: Lab Computer, Hyper4, Windows 10 os.
 
 Questions:
+1. Why was it important we changed the Preferred DNS Server on 
+the Client?
 
-Notes and Observations: For this lab the first thing we did
+2. What extra step did you have to do to allow you to log in to 
+the client with a domain user? Why do you suppose the Microsoft 
+added that extra requirement?
+
+3. Why Active Directory? What advantages does it offer over 
+using just regular servers on your network?
+
+4. List several reasons why companies use virtual servers.
+
+<b>Notes and Observations:</b> For this lab the first thing we did
 go to "Server Manager" and "Add Role -> Active Directory
 Domain Services -> Install
 
@@ -57,4 +68,5 @@ Client to be able to remote access.
 Conclusion and Reflection:
 This lab was fairly similar to Lab 2 in that we created another
 Virtual Machine and installed Windows 10 on it. As well as
-created users to log onto it. 
+created users to log onto it. The difference is that this VM
+is set up to act like a client and will have restricted access.
