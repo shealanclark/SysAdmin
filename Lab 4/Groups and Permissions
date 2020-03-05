@@ -4,6 +4,55 @@ Shea Clark, Alexandra
 
 Objective: Create groups and adjust the permissions and security settings for the groups.
 
-Notes and Observations:
+Notes and Observations: 
+  For this lab we started by logging into winServer4/Server Manager/Tools/Active Directory Users and Computers/
+  Create New OU called "Main".
+  
+  Inside of the Main OU create the OU's Marketing, HR, Accounting, and IT. Then moved out client users to IT OU.
+  
+  -Create 5 new users for our new OU's
+    -sheamarketing@domain4.local
+    -sheait@domain4.local
+    -Alex created her own for accounting, HR, and marketing.
+  -Added out client users to the domain admins under Users.
+  -Create Global Group to each OU
+    -MarketingGG
+    -AccountingGG
+    -HRGG
+    -ITGG
+  -Create Domain Local groups to each OU
+    -MarketingDL
+    -AccountingDL
+    -HRDL
+    -ITDL
+  -Add the users from the OU's to the GG of each OU.
+  -Add the GG to the DL group.
+  -Create a folder on the desktop called "Data"
+    -Create subfolders
+      -Marketing DATA
+      -Accounting DATA
+      -HR DATA
+      -IT DATA
+  -For each of the folders go to properties/security and add the DL group of that type and give the DL full controll.
+        security/edit/add/check names
+        
+Switch to the Client Console
+  -Log onto Client as admin/search/local users and groups/groups/remote desktop/add domain users.
+  -Logon to Client as Shea Marketing-Success!
+  -Share our Top-Shelf folder "Data" on the winServer4 with domain users and give full control.
+  
+  Alex HR signed into Client and couldn't access the Data folder
+  -went back to our server and went to properties/security for our Data folder and gave access-Success!
+  -went to link and followed the instructions to add a printer to our server.
+    https://www.tactig.com/install-configure-print-services-windows-server/
+  -entered the printer id address and install driver called "generic". 
+      Successfully print test page.
+    Server/printers/Generic/Properties/Security/Remove Everyone/Add HR DL
+   Signed in as Alex HR/folder/winServer4/printer/print test page-Success!
 
 Conclusion and Reflection:
+  This lab went more smoothly for us. It was interesting to see how these groups(GG, DL, Users) nest within 
+  each other and how sharing a printer is not actually a lot of work, but is definitely a little bit of a 
+  learning curve. There is a lot more involved than you might think. I think the best way to do this again
+  woulbe be to have a check list and check things off as you go. The thing to remember as well is that even
+  though you share a folder, the other server won't be able to see it until you set up the security settings.
