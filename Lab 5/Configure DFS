@@ -2,17 +2,68 @@ Lab 5
 3/30/2020
 Shea Clark and Alexandra
 
-Objectives:
+Objectives: To install and configure a DFS system with replication.
 
 Questions:
   1. What advantages does DFS offer over regular folder shares?
+    The structure of the DFS is much simpler than a file sharing system. It also allows you to replicate 
+    to certain departments.
   
   2. What advantages does domain based namespace have over standalone DFS.
+    When using a domain based namespace, you can use multiple namespace servers to host.
   
   3. What is the purpose of the referral server in DFS?  Why is it important to have a backup referral
   server?
+    The purpose of a referral server in DFS is to provide reliable servers for the client. 
+    It is important to have a backup referral server for when the clients computer fails to connect to the 
+    first server, the client computer will attempt to access the next server. If that server is unavailable
+    you can configure to have the client computer connect to the preferred server when it becomes available again.
 
 
 Notes and Observations:
+  Day 1
+   -First we created a new VM called winServer4b
+   -Change computer name
+      system mng/computer name/winServer4b
+   -Added ourselves into Domain 4
+   -Enable remote access
+   -Install active directory servers to add roles to our server
+   -Promote server to Domain Controller in Deployment Config
+   -sign in as admin
+   -install DNS and reboot
+ Day 2
+   -Logon to winServer4b and remote access.
+   -Created a folder on the desktop called "Top Shelf"
+   -Made subfolders:
+      -Accounting
+      -Marketing
+      -HR
+      -IT
+   -Shared the folder with the Domain Local group of each type.
+   -Removed everyone for permissions
+    HR/properties/advanced sharing/check box "Share this folder"/
+    permissions/remove "everyone"/add HR DL/check box "full controll"
+   -file explorer/Network/winServer4b/Top Shelf/ security/add Domain Users/
+    full control-Success!
+   Alex HR signed onto Client Server and accessed the HR folder and created a new folder.
+   -winServer4b/Server Manager/Manage/Server Roles/Expand File and Storage Services/check box both 
+   "DFS Namespace" & "DFS Replication"
+ Day 3
+   -Install/Tools/DFS Management/Namespaces/right click/New Namespace/
+    Enter server name "winServer4b"/Name "DFSnamespace/Create namespace
+   -Added folder "DFS Test" to our namespace/Add folder target "Top Shelf"
+   -Unable to add the subfolder of Top Shelf. Said the subfolders didn't exist and access was denied.
+   -Under DFS Test/Add Namespace Server on the right hand side/
+   -Added winServer4 - Success!
+   -Replication/New Replication Group/named "Company Files" for name of replication group/
+    Next/Add Server - ERROR! "Value does not fall within the expected range"
+ Day 4
+   -We had to set up DFS on the main server WinServer4 which made it to where we could see the replication
+    was working. But when we tried to create a new replication group under winServer4b, we still got the 
+    same error message although it should've worked just fine.
+   
 
 Conclusion and Reflection:
+  This lab seemed to have ended up being more complicated than intended. Everyone was running into trouble
+  with it. I guess the thing I learned in this lab is that replication is quite handy and simpler to set up 
+  than a file sharing system when it is working properly.
