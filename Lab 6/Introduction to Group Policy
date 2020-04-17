@@ -1,0 +1,75 @@
+Lab 6
+4/16/2020
+Shea Clark and Alexandra
+
+Objective: Become familiar with Group Policy basics and procedures.
+
+Questions:
+  1. Why is it so important that IT administrators learn Group Policy in an Active Directory 
+  environment? 
+    When you build and Active Directory, you already have all that you need to set up security settings without an
+    additional install or cost.
+  
+  2. What are the levels of hierarchy for Group Policy and how do they fit together?
+    Local -> Site -> Domain -> OU
+      Local processes first. Site defines the physical location of the network.
+      In the Domain, GPO settings are applied to everything in the domain. OU's organize people and/or machines
+      that allow you to create settings for these specific groups.
+      If you have a conflicting policy in the different levels, the last level (OU) will have the last say.
+  
+  3. By default, what is affected by the Default Domain Policy GPO?
+      Everything is affected by this. If you do need to make changes to this, you have to make sure it is
+      done properly.
+  
+  4. Often you will find policy settings with three choices: Not Configured, Enabled, or Disabled. 
+  Explain why Not Configured and Disabled might not be the same.  Give an example.
+      The difference between Not Configured and Disabled is that Not Configured means that nothing has been
+      manipulated for that specific OU, etc. Disabled means that access has been deleted.
+      An example would be if I tried to access a folder, the default for Not Configured might be Read Only and I will
+      be able to see its contents. Whereas if I try to access this folder and it was Disabled for me, I wouldn't be 
+      able to see anything in that folder.
+  
+  5. Explain why creating new GPOs rather than modifying the Default Domain Policy is generally a 
+  better idea.
+    Creating a new GPO is easier to manipulate and manage than the latter. Changing the Default Domain Policy will
+    cause problems on a large scale if not done properly.
+  
+  6. Along the same line as the previous question, why is it best to keep minimal settings inside of 
+  each GPO and then have many more GPOs as opposed to one GPO that contains all the 
+  settings?
+    It is easier to manage the settings that way.
+  
+  7. Describe the purpose of the commands gpupdate and gpresult.
+    gpupdate updates the Group Policy settings faster than if through the graphical route.
+    gpresult shows the client which GPO's have been applied or not applied.
+  
+  8. What might be an example where you would block GPO inheritance?
+    You want to create a new server and be able to configure Direct Access.
+  
+  9. How does enforcing GPOs affect GPO precedence?
+    Like with the desktop wallpapers. The tiers above "Accounting" will have blue and the lower tier "Accounting
+    will have orange.
+  
+  10.  Why might you want to disable all User Configuration settings in a GPO?
+    If you disable the User Configuration, it will speed up Group Policy processing.
+  
+  11. When testing a new GPO why might you want to filter it to an individual user or computer?
+    It allows you to test out the new setting before releasing that setting to everyone.
+  
+  12. Why is it “dangerous” to block a GPO by using the Deny permission in the Delegation tab?
+    It might cause problems with troubleshooting in the future since you can only view the Deny checkbox
+    in the Delegation tab.
+  
+  13. What are some examples of using WMI filters for GPO filtering?
+    A couple examples would be to only install software if that computer has at least so much space available.
+    Another would be to only apply a firewall if it is a Windows.
+  
+  
+Notes and Observations:
+  For this lab we followed the tutorial in the book "Mastering Windows Group Policy" chapters 1-4.
+  The main task was to set the desktop background to blue for everyone. Then make the necessary settings
+  to make it to where the Accounting user would have an orange desktop background. 
+
+Conclusion and Reflection:
+  This was a good example on the hierarchy of Group Policy and how the "lower" level settings are going to be
+  applied last and overwrite the previous settings of the upper levels.
