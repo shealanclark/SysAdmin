@@ -2,22 +2,7 @@ Case Study
 5/14/2020
 Shea, Justin, Alex
 
-OBJECTIVE: To set up an active directory, file systems, and security for the company JQ Adams.
-
-NOTES AND OBSERVATIONS: The first thing we did with this case study was come up with a file directory system
-  for the company. This is what we came up with:
-    JQ Adams
-      Administration
-      Finance
-        Accounting
-      Sales
-        Marketing
-      Production
-        Team 1
-        Team 2
-      Quality Control
- 
-    
+OBJECTIVE: To set up an active directory, file systems, and security for the company JQ Adams
 
 QUESTIONS:
 1.    What questions would you ask the company to help you plan the Active Directory?
@@ -30,55 +15,70 @@ QUESTIONS:
       You could use something like Visio to display the structure.)
       
       For our Active Directory, we didn't deviate very far from what was already shown in the company graph.
-      
+      I think the main thing that we assumed we to go ahead and make the president and the vp's admins.
 
 3.    Describe your file directory structure you created for the JQ Adams case study. 
       Indicate which folders are being shared.
-
+      For our file directory under Administration, all of the folders were being shared.
+      Under Administration is Home, Roaming Profiles, The Supervisor folder, etc.
 
 4.    What is your naming policy for user accounts?
-
+      For user accounts we made sure to name every by using their first name with their last initial.
 
 5.    Describe how you can delegate full control of managing production user accounts to the Production Vice President.
-
+      To delegate full control to the Production VP, you would select that GPO and click on the Delegation tab>Add>
+      Select the user and then select the users that you'd had GPO permissions.
 
 6.    Describe how you use global groups to group users together and then domain local groups to provide access to network resources. 
       For example, you could describe how you used this concept to provide access for finance users to the AcctSys folder.
-
+      For global groups and domain local groups we simply just added both to every OU under the JQ Adams OU. To provide access
+      to the AcctSys folder we went to security and removed Everyone, then added the domain users to have Full Control.
 
 7.    Generally speaking, what are the advantages of using global groups to manage users and then using domain local groups
       on the Security Tab to provide access?
-
+      With Global Groups you are better able to manage role-specific users. Which thinking about that, it would have been
+      better if we had delegated that control to AcctSys using GG instead of DL. 
+      With Domain Local Groups is nice to use for security because it will include everyone within both GG and DL. 
+      Then if you need to narrow it down more you can adjust security settings for either a specific person or role-specific group.
 
 8.    Why is it important to set disk quotas for users?
-
+      This helps users to not take up so much space that may be needed elsewhere.
 
 9.    Briefly describe how you setup DFS for your JQ Adams project.
-
+      We didn't do anything with namespaces and replications since it was already on there.
 
 10.  What are at least two advantages of using DFS?
+      Better organization of files.
+      It is already included with Windows.
 
 
 11.  What group policies did you setup for this project?
-
+      We ran into some trouble with the group policies. It referenced for us to look at chapter 9/10 of the book,
+      but we were unable to find it. 
 
 12.  What information can you get from the GPresult tool?
-
+      With a GPresult you can pull up information about a user and/or computer.
 
 13.  Describe how you can use Group Policy to distribute and control Chrome on the client computers.
-
+      You can use Group Policy to control how Chrome functions for the users.
 
 14.  Explain how roaming profiles can be useful.
-
+      The users won't have to create a profile for each computer they logon to.
+      Also their information is stored on the network.
 
 15.  Describe problems or issues you had while implementing this project.  How did you work around or overcome the problems?
-
+      For this project we often made the problem harder than it actually was. A lot of our issues got solved as we would look
+      back through our notes and past labs to jog our memory of what and how certain things needed to be done.
+      We basically had the most trouble finding where to make the necessary changes.
 
 16.  Write a conclusion/reflection about this case study. 
      Include what you learned and what you would do different if you were to start over on a similar project.  
      
-     
-CONCLUSION AND REFLECTION:
+     As I mentioned above, our biggest issue was making the assignment harder than it actually was. It seemed like a very
+     big impossible task, but I think we made it a lot further than we expected to. I enjoyed working with my group. It
+     was kind of nice that we were all on the same level, because we figured it out together. Something I would do differently
+     is take better notes. I rely heavily on notes and I could've taken better ones, or at least more organized notes so that
+     I didn't have to spend so much time searching for the info I needed.
 
 
      
